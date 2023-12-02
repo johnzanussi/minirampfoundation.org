@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import iconYoutube from 'bootstrap-icons/icons/youtube.svg';
+import iconInstagram from 'bootstrap-icons/icons/instagram.svg';
+import iconFacebook from 'bootstrap-icons/icons/facebook.svg';
+import iconTiktok from 'bootstrap-icons/icons/tiktok.svg';
+
+const socialAccounts = [
+    {
+        name: '',
+        icon: iconYoutube,
+        url: '',
+    },
+    {
+        name: '',
+        icon: iconInstagram,
+        url: '',
+    },
+    {
+        name: '',
+        icon: iconFacebook,
+        url: '',
+    },
+    {
+        name: '',
+        icon: iconTiktok,
+        url: '',
+    },
+];
+---
+<div class="mb-4 mb-md-5">
+    <p class="text-uppercase">
+        Follow us on Social Media
+    </p>
+
+    <ul class="list-inline">
+        {socialAccounts.map(({ icon, url}) => {
+            return (
+                <li class="list-inline-item me-4 me-md-5">
+                    <a href={url}>
+                        <Image
+                            src={icon}
+                            alt=""
+                            width="40"
+                            height="40"
+                        />
+                    </a>
+                </li>
+            );
+        })}
+    </ul>
+
+</div>

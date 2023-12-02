@@ -1,0 +1,149 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@/layouts/Layout.astro';
+import Section from '@/components/Section.astro';
+import SocialIcons from '@/components/SocialIcons.astro';
+
+import imgMain from '@/assets/photos/tanner-jam-header.jpg';
+import imgRamp from '@/assets/photos/IMG_6004.jpeg';
+
+import imgCrowd1 from '@/assets/photos/DSC_7538.jpeg';
+import imgCrowd2 from '@/assets/photos/IMG_3095.jpeg';
+import imgChad from '@/assets/photos/460A5365.jpeg';
+---
+<Layout>
+
+	<Section isFluid>
+		<Image
+			src={imgMain}
+			alt=""
+			class="img-fluid"
+		/>
+	</Section>
+
+	<Section id="mission">
+
+		<div class="row w-md-75 m-auto">
+
+			<div class="col-md-6 text-md-end">
+
+				<h1 class="section-header mt-0 mt-md-5 mb-md-4">
+					Mission
+				</h1>
+
+				<p>The Mini Ramp Foundation is dedicated to providing more public places to skate across the United States. By focusing on smaller projects such as mini ramps, we will be able to cover more ground and at a faster rate. As skateboarding continues to grow in popularity, we aim to help our public facilities grow in quality and quantity.</p>
+
+			</div>
+
+			<div class="col-md-6">
+				<Image
+					src={imgRamp}
+					alt=""
+					class="img-fluid"
+				/>
+			</div>
+
+		</div>
+
+
+	</Section>
+
+	<Section id="donate">
+
+		<div class="w-md-75 m-auto text-md-center">
+
+			<div class="">
+				<h1 class="section-header mb-md-4">
+					Donate
+				</h1>
+			</div>
+
+			<p class="mb-md-4">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</p>
+
+			<div class="text-center">
+				<script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
+				<iframe src="https://donorbox.org/embed/mini-ramp-foundation-fund?default_interval=o" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style="max-width: 425px; min-width: 250px; max-height:none!important" class="mx-auto"></iframe>
+			</div>
+
+		</div>
+
+	</Section>
+
+	<Section isFluid>
+		<div class="d-flex">
+			<Image
+				src={imgCrowd1}
+				alt=""
+				class="img-fluid w-50"
+			/>
+			<Image
+				src={imgCrowd2}
+				alt=""
+				class="img-fluid w-50"
+			/>
+		</div>
+	</Section>
+
+	<Section id="contact">
+
+		<div class="w-md-75 row mx-auto">
+
+			<div class="col-md-6">
+
+				<h1 class="section-header mt-md-5 mb-md-4">
+					Contact
+				</h1>
+
+				<p class="mb-4 mb-md-5">
+					All inquries can be sent to <span class="user-select-all">minirampfoundation@gmail.com</span>.
+				</p>
+
+				<SocialIcons />
+
+				<form>
+
+					<div class="mb-3">
+
+						<label for="email" class="form-label text-uppercase">
+							Join our mailing list
+						</label>
+
+						<div class="d-flex">
+
+							<input
+								type="email"
+								name="email"
+								id="email"
+								class="form-control form-control-md-lg me-1 me-md-3"
+								placeholder="youremail@mail.com"
+							/>
+
+							<button class="btn btn-dark" type="submit">
+								Subscribe
+							</button>
+
+						</div>
+
+					</div>
+
+				</form>
+
+			</div>
+
+			<div class="col-md-5 offset-md-1">
+
+				<Image
+					src={imgChad}
+					alt=""
+					class="img-fluid"
+				/>
+
+			</div>
+
+		</div>
+
+	</Section>
+
+</Layout>

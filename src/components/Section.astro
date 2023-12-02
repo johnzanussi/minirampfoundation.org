@@ -1,0 +1,20 @@
+---
+type Props = {
+    id?: string;
+    class?: string;
+    isFluid?: boolean;
+};
+
+const {
+    id,
+    class: className,
+    isFluid = false,
+} = Astro.props;
+
+---
+<section
+    class:list={[`container${isFluid ? '-fluid px-0' : ' py-4'} mb-2 mb-md-5`, className]}
+    id={id}
+>
+    <slot />
+</section>

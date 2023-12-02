@@ -1,0 +1,23 @@
+@import './bootstrap';
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+.navbar-nav {
+    a {
+        color: $black;
+    }
+}
+
+.section-header {
+    display: inline-block;
+    background: $black;
+    color: $white;
+    padding-inline: 0.25em;
+    text-transform: uppercase;
+}
+
+
+@include media-breakpoint-up(lg) {
+    .w-md-75 {
+        width: 75% !important;
+    }
+}
