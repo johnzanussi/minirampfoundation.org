@@ -2,6 +2,10 @@
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
 
 
+html {
+    scroll-padding-top: 100px;
+}
+
 .section-header {
     display: inline-block;
     background-color: #161616;

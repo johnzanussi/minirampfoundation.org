@@ -42,7 +42,8 @@ const { links } = Astro.props;
                         <li class="nav-item ms-lg-4">
                             <a
                                 href={url}
-                                class="d-block py-2 py-lg-0">
+                                class="d-block py-2 py-lg-0"
+                            >
                                 {label}
                             </a>
                         </li>
@@ -53,6 +54,15 @@ const { links } = Astro.props;
     </div>
 </nav>
 
-<!-- <script>
+<script>
 import 'bootstrap/js/dist/collapse.js';
-</script> -->
+
+const $navbar = document.getElementById('navbar');
+if ($navbar) {
+    $navbar.querySelectorAll('.nav-item').forEach((link) => {
+        link.addEventListener('click', () => {
+            $navbar.classList.remove('show');
+        })
+    });
+}
+</script>
