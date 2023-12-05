@@ -3,7 +3,10 @@
 
 
 html {
-    scroll-padding-top: 100px;
+    scroll-padding-top: 260px;
+    @include media-breakpoint-up(lg) {
+        scroll-padding-top: 100px;
+    }
 }
 
 .section-header {
