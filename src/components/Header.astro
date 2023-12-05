@@ -28,14 +28,14 @@ const { links } = Astro.props;
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbar"
-            aria-controls="navbar"
+            data-bs-target="#navbar-collapse"
+            aria-controls="navbar-collapse"
             aria-expanded="false"
             aria-label="Toggle navigation"
         >
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse pt-2 pt-lg-0" id="navbar">
+        <div class="collapse navbar-collapse pt-2 pt-lg-0" id="navbar-collapse">
             <ul class="navbar-nav ms-auto text-end text-lg-start">
                 {links.map(({ url, label }) => {
                     return (
@@ -55,13 +55,13 @@ const { links } = Astro.props;
 </nav>
 
 <script>
-import 'bootstrap/js/dist/collapse.js';
-
-const $navbar = document.getElementById('navbar');
+import { Collapse } from 'bootstrap';
+const $navbar = document.getElementById('navbar-collapse');
 if ($navbar) {
+    const collapse = new Collapse($navbar, { toggle: false });
     $navbar.querySelectorAll('.nav-item').forEach((link) => {
         link.addEventListener('click', () => {
-            $navbar.classList.remove('show');
+            collapse.hide();
         })
     });
 }
