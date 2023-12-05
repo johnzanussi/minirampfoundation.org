@@ -10,10 +10,6 @@ import imgLogo from '@/assets/logo-the-mini-ramp-foundation-white.png';
 
 const { links } = Astro.props;
 ---
-<script>
-import 'bootstrap/js/dist/collapse.js';
-</script>
-
 <nav
     class="navbar navbar-expand-lg py-3 position-sticky sticky-top"
     data-bs-theme="dark"
@@ -56,3 +52,7 @@ import 'bootstrap/js/dist/collapse.js';
         </div>
     </div>
 </nav>
+
+<script is:inline>
+import 'bootstrap/js/dist/collapse.js';
+</script>
