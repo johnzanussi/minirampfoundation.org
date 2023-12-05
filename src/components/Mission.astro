@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import Section from '@/components/Section.astro';
+
+import imgRamp from '@/assets/photos/IMG_6004.jpeg';
+---
+<Section id="mission">
+
+    <div class="row w-md-75 m-auto">
+
+        <div class="col-md-6 text-md-end">
+
+            <h1 class="section-header mt-0 mt-md-5 mb-md-4">
+                Mission
+            </h1>
+
+            <p>The Mini Ramp Foundation is dedicated to providing more public places to skate across the United States. By focusing on smaller projects such as mini ramps, we will be able to cover more ground and at a faster rate. As skateboarding continues to grow in popularity, we aim to help our public facilities grow in quality and quantity.</p>
+
+        </div>
+
+        <div class="col-md-6">
+            <Image
+                src={imgRamp}
+                alt=""
+                class="img-fluid"
+            />
+        </div>
+
+    </div>
+
+
+</Section>

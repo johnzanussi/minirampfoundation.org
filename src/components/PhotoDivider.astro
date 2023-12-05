@@ -1,0 +1,24 @@
+---
+type Props = {
+    photos: ImageMetadata[];
+};
+
+import { Image } from 'astro:assets';
+import Section from '@/components/Section.astro';
+
+const { photos } = Astro.props;
+
+const width = `${Math.round(100 / photos.length)}%`;
+---
+<Section isFluid>
+    <div class="d-flex">
+        {photos.map(photo => (
+            <Image
+                src={photo}
+                alt=""
+                class="img-fluid"
+                style={{ width }}
+            />
+        ))}
+    </div>
+</Section>

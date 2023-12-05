@@ -1,0 +1,58 @@
+---
+import type { Link } from '@/types/links';
+import { Image } from 'astro:assets';
+
+type Props = {
+    links: Link[];
+};
+
+import imgLogo from '@/assets/logo-the-mini-ramp-foundation-white.png';
+
+const { links } = Astro.props;
+---
+<script>
+import 'bootstrap/js/dist/collapse.js';
+</script>
+
+<nav
+    class="navbar navbar-expand-lg py-3 position-sticky sticky-top"
+    data-bs-theme="dark"
+    style={{ backgroundColor: '#161616' }}
+>
+    <div class="container">
+        <a href="/" class="navbar-brand ps-2 ps-lg-0">
+            <Image
+                src={imgLogo}
+                alt=""
+                width="230"
+                height="50"
+            />
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse pt-2 pt-lg-0" id="navbarScroll">
+            <ul class="navbar-nav ms-auto text-end text-lg-start">
+                {links.map(({ url, label }) => {
+                    return (
+                        <li class="nav-item ms-lg-4">
+                            <a
+                                href={url}
+                                class="d-block py-2 py-lg-0">
+                                {label}
+                            </a>
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
+    </div>
+</nav>

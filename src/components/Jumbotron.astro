@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import Section from '@/components/Section.astro';
+
+type Props = {
+    image: ImageMetadata;
+    title: string;
+};
+
+const { image, title } = Astro.props;
+---
+
+<Section isFluid>
+
+    <div class="jumbotron position-relative ratio" style="--bs-aspect-ratio: 61%;">
+
+        <div class="text-center">
+
+            <Image
+                src={image}
+                alt=""
+                class="img-fluid position-absolute top-0 start-0 end-0 bottom-0"
+            />
+
+            <h1 class="fs-5 position-relative">
+                {title}
+            </h1>
+
+        </div>
+
+    </div>
+
+</Section>
