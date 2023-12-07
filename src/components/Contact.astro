@@ -2,6 +2,9 @@
 import Section from '@/components/Section.astro';
 import SocialIcons from '@/components/SocialIcons.astro';
 import Newsletter from '@/components/Newsletter.astro';
+import HighlightHeader from '@/components/HighlightHeader.astro';
+
+import config from '@/config';
 ---
 <Section id="contact">
 
@@ -9,12 +12,12 @@ import Newsletter from '@/components/Newsletter.astro';
 
         <div class="col-md-6">
 
-            <h1 class="section-header mb-md-4">
+            <HighlightHeader class="mb-md-4">
                 Contact
-            </h1>
+            </HighlightHeader>
 
             <p class="mb-4 mb-md-5">
-                All inquries can be sent to <span class="user-select-all">minirampfoundation@gmail.com</span>.
+                All inquries can be sent to <a href={`mailto:${config.contactEmail}`} class="link-underline-dark link-offset-2">{config.contactEmail}</a>.
             </p>
 
         </div>

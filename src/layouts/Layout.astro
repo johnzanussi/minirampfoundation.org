@@ -3,29 +3,14 @@ import { getImage } from 'astro:assets';
 import '@fontsource-variable/rubik';
 import '@/styles/index.scss';
 
+import config from '@/config';
+
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 
 import imgOG from '@/assets/the-mini-ramp-foundation.png';
 
-const TITLE = 'The Mini Ramp Foundation';
-
 const ogImageSrc = await getImage({ src: imgOG });
-
-const links = [
-	{
-		url: '#mission',
-		label: 'Mission'
-	},
-	{
-		url: '#donate',
-		label: 'Donate'
-	},
-	{
-		url: '#contact',
-		label: 'Contact'
-	},
-];
 ---
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -34,18 +19,18 @@ const links = [
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 
-<title>{TITLE}</title>
+<title>{config.title}</title>
 
-<meta name="title" content={TITLE}>
+<meta name="title" content={config.title}>
 <meta name="description" content="The Mini Ramp Foundation is dedicated to providing more public places to skate across the United States. Empowering youth through skateboarding.">
 <meta name="keywords" content="skateboarding, miniramp, mini ramp, foundation, charity, skate park, skate, chad caruso, skate across america, half pipe, quarter pipe, skateboard, ">
 <meta name="robots" content="index, follow">
 <meta name="language" content="English">
 
-<meta property="og:title" content={TITLE}>
-<meta property="og:site_name" content={TITLE}>
-<meta property="og:url" content="minirampfoundation.org">
-<meta property="og:description" content="The Mini Ramp Foundation is dedicated to providing more public places to skate across the United States. By focusing on smaller projects such as mini ramps, we will be able to cover more ground and at a faster rate. As skateboarding continues to grow in popularity, we aim to help our public facilities grow in quality and quantity.">
+<meta property="og:title" content={config.title}>
+<meta property="og:site_name" content={config.title}>
+<meta property="og:url" content={config.url}>
+<meta property="og:description" content={config.description}>
 <meta property="og:type" content="website">
 <meta property="og:image" content={ogImageSrc.src}>
 
@@ -53,17 +38,17 @@ const links = [
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#161616">
-<meta name="msapplication-TileColor" content="#161616">
-<meta name="theme-color" content="#161616">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color={config.themeColor}>
+<meta name="msapplication-TileColor" content={config.themeColor}>
+<meta name="theme-color" content={config.themeColor}>
 </head>
 <body>
 
-	<Header links={links} />
+	<Header links={config.navLinks} />
 
 	<slot />
 
-	<Footer links={links} />
+	<Footer links={config.navLinks} />
 
 </body>
 </html>

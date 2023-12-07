@@ -1,6 +1,7 @@
 ---
 import type { Link } from '@/types/links';
 import { Image } from 'astro:assets';
+import config from '@/config';
 
 type Props = {
     links: Link[];
@@ -11,17 +12,22 @@ import imgLogo from '@/assets/logo-the-mini-ramp-foundation-white.png';
 const { links } = Astro.props;
 ---
 <nav
-    class="navbar navbar-expand-lg py-3 position-sticky sticky-top"
+    id="navbar"
+    class="navbar navbar-expand-lg py-3 position-sticky sticky-top bg-black"
     data-bs-theme="dark"
-    style={{ backgroundColor: '#161616' }}
 >
     <div class="container">
-        <a href="/" class="navbar-brand ps-2 ps-lg-0">
+        <a
+            href="/"
+            class="navbar-brand ps-2 ps-lg-0"
+            aria-label={config.title}
+        >
             <Image
                 src={imgLogo}
-                alt=""
+                alt={`${config.title} logo`}
                 width="230"
                 height="50"
+                loading="eager"
             />
         </a>
         <button
@@ -42,7 +48,7 @@ const { links } = Astro.props;
                         <li class="nav-item ms-lg-4">
                             <a
                                 href={url}
-                                class="d-block py-2 py-lg-0"
+                                class="nav-link link-offset-2 d-block py-2 py-lg-0"
                             >
                                 {label}
                             </a>

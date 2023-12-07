@@ -6,19 +6,34 @@ import Contact from '@/components/Contact.astro';
 import Donate from '@/components/Donate.astro';
 import Jumbotron from '@/components/Jumbotron.astro';
 
+import config from '@/config';
 import imgTannerJam from '@/assets/photos/tanner-jam-bw.jpg';
+
 ---
 <Layout>
 
-	<Jumbotron
-		image={imgTannerJam}
-		title="Empowering youth through skateboarding"
-	/>
+	<div
+		data-bs-spy="scroll"
+		data-bs-target="#navbar"
+		data-bs-root-margin="0px 0px -40%"
+		data-bs-smooth-scroll="true"
+		tabindex="0"
+	>
+		<Jumbotron
+			image={imgTannerJam}
+			title={config.tagline}
+		/>
 
-	<Mission />
+		<Mission />
 
-	<Donate />
+		<Donate />
 
-	<Contact />
+		<Contact />
+
+	</div>
 
 </Layout>
+
+<script>
+import 'bootstrap/js/dist/scrollspy';
+</script>

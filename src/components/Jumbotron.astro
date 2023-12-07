@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Section from '@/components/Section.astro';
+import HighlightHeader from '@/components/HighlightHeader.astro';
 
 type Props = {
     image: ImageMetadata;
@@ -18,13 +19,14 @@ const { image, title } = Astro.props;
 
             <Image
                 src={image}
-                alt=""
+                alt="A group of people at a skatepark watching a skate competition"
                 class="img-fluid position-absolute top-0 start-0 end-0 bottom-0"
+                loading="eager"
             />
 
-            <h1 class="fs-5 position-relative">
+            <HighlightHeader class="fs-5 position-relative top-50">
                 {title}
-            </h1>
+            </HighlightHeader>
 
         </div>
 

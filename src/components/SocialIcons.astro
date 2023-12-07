@@ -7,22 +7,22 @@ import iconTiktok from 'bootstrap-icons/icons/tiktok.svg';
 
 const socialAccounts = [
     {
-        name: '',
+        name: 'YouTube',
         icon: iconYoutube,
         url: '',
     },
     {
-        name: '',
+        name: 'Instagram',
         icon: iconInstagram,
         url: '',
     },
     {
-        name: '',
+        name: 'Facebook',
         icon: iconFacebook,
         url: '',
     },
     {
-        name: '',
+        name: 'TikTok',
         icon: iconTiktok,
         url: '',
     },
@@ -34,13 +34,13 @@ const socialAccounts = [
     </p>
 
     <ul class="list-inline">
-        {socialAccounts.map(({ icon, url}) => {
+        {socialAccounts.map(({ icon, url, name }) => {
             return (
                 <li class="list-inline-item me-4">
-                    <a href={url}>
+                    <a href={url} aria-label={name}>
                         <Image
                             src={icon}
-                            alt=""
+                            alt={`${name} logo icon`}}
                             width="40"
                             height="40"
                         />

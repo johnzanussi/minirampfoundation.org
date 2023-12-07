@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Section from '@/components/Section.astro';
+import HighlightHeader from '@/components/HighlightHeader.astro';
 
 import imgRamp from '@/assets/photos/mini-ramp-girl.png';
 ---
@@ -10,9 +11,9 @@ import imgRamp from '@/assets/photos/mini-ramp-girl.png';
 
         <div class="col-md-6 text-md-end">
 
-            <h1 class="section-header mt-0 mt-md-5 mb-md-4">
+            <HighlightHeader class="mt-0 mt-md-5 mb-md-4">
                 Mission
-            </h1>
+            </HighlightHeader>
 
             <p>The Mini Ramp Foundation is dedicated to providing more public places to skate across the United States. By focusing on smaller projects such as mini ramps, we will be able to cover more ground and at a faster rate. As skateboarding continues to grow in popularity, we aim to help our public facilities grow in quality and quantity.</p>
 
@@ -21,8 +22,9 @@ import imgRamp from '@/assets/photos/mini-ramp-girl.png';
         <div class="col-md-6">
             <Image
                 src={imgRamp}
-                alt=""
+                alt="A young girl standing on a skateboard at the top of a ramp"
                 class="img-fluid"
+                loading="lazy"
             />
         </div>
 

@@ -1,7 +1,6 @@
 @import './bootstrap';
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
 
-
 html {
     scroll-padding-top: 260px;
     @include media-breakpoint-up(lg) {
@@ -9,39 +8,19 @@ html {
     }
 }
 
-.section-header {
-    display: inline-block;
-    background-color: #161616;
-    color: $white;
-    padding-inline: 0.25em;
-    text-transform: uppercase;
-}
-
-
 @include media-breakpoint-up(lg) {
     .w-md-75 {
         width: 75% !important;
     }
-}
 
-.jumbotron {
-    h1 {
-
-        @include media-breakpoint-up(lg) {
+    .jumbotron {
+        h1 {
             font-size: 4rem !important;
         }
-
-        top: 50%;
-
-        display: inline;
-        background: #161616;
-        color: #fff;
-        padding-inline: 0.25em;
-        text-transform: uppercase;
     }
 }
 
-
-.grayscale {
-    filter: grayscale(1);
+.nav-link.active,
+.link-underline-dark {
+    text-decoration: underline;
 }

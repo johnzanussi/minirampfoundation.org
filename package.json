@@ -11,11 +11,14 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
-    "@fontsource-variable/rubik": "^5.0.19",
-    "astro": "^3.6.4",
+    "@fontsource-variable/rubik": "^5.0.20",
+    "astro": "^4.0.3",
+    "astro-compress": "^2.2.3",
+    "astro-purgecss": "^4.0.0",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.2",
-    "typescript": "^5.3.2"
+    "purgecss": "^5.0.0",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",

@@ -5,6 +5,7 @@
 @import '../node_modules/bootstrap/scss/functions';
 
 
+$black: #161616;
 $primary: #0051BB;
 // $warning: #F7C268;
 $warning: #BA700B;
@@ -15,6 +16,8 @@ $spacer: $base-size;
 $font-size-base: $base-size;
 $font-family-sans-serif: 'Rubik Variable', sans-serif;
 $small-font-size: 0.8rem;
+
+$link-color: $black;
 $link-decoration: none;
 
 $navbar-dark-color: #fff;
