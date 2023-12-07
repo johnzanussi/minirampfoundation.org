@@ -1,0 +1,12 @@
+/* DEVELOPER */
+    Name: John Zanussi
+    Email: johnzanussi [at] gmail.com
+    Site: https://johnzanussi.com
+    From: Long Island, New York, USA
+
+/* SITE */
+	Last update: 2023/12/06
+    Language: English
+	Doctype: HTML5
+    Technologies: Vercel, Astro, TypeScript, Bootstrap
+    Tools: VS Code, git

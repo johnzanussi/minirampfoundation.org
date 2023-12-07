@@ -1,33 +1,34 @@
-# Astro Starter Kit: Minimal
+# 🛹 The Mini Ramp Foundation
+The Mini Ramp Foundation is dedicated to providing more public places to skate across the United States. By focusing on smaller projects such as mini ramps, we will be able to cover more ground and at a faster rate. As skateboarding continues to grow in popularity, we aim to help our public facilities grow in quality and quantity.
 
-```sh
-npm create astro@latest -- --template minimal
-```
+[minirampfoundation.org](https://minirampfoundation.org)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Registered 501(C)(3). EIN: XX-XXXXXXX
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Built with [Astro](https://astro.build/).
 
 ```text
 /
 ├── public/
 ├── src/
+└── assets/
+│       └── image.png
+└── components/
+│       └── Component.astro
+└── config/
+│       └── index.ts
+└── layouts/
+│       └── Layout.astro
 │   └── pages/
 │       └── index.astro
+└── styles/
+│       └── styles.scss
+└── types/
+│       └── type.ts
 └── package.json
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -41,7 +42,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
