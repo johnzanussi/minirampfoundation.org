@@ -2,10 +2,7 @@
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
 
 html {
-    scroll-padding-top: 260px;
-    @include media-breakpoint-up(lg) {
-        scroll-padding-top: 100px;
-    }
+    scroll-padding-top: 100px;
 }
 
 @include media-breakpoint-up(lg) {
@@ -23,4 +20,8 @@ html {
 .nav-link.active,
 .link-underline-dark {
     text-decoration: underline;
+}
+
+.decoration-break {
+    box-decoration-break: clone;
 }

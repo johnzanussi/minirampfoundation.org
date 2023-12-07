@@ -5,7 +5,7 @@ type Props = {
 
 const { class: className } = Astro.props;
 ---
-<h1 class:list={['d-inline-block px-1 bg-black text-white text-uppercase', className]}>
-    <slot />
+<h1 class:list={[`d-inline-block text-uppercase`, className]}>
+    <span class="bg-black text-white px-1 px-md-2 decoration-break"><slot /><span>
 </h1>
 
