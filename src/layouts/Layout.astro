@@ -10,7 +10,10 @@ import Footer from '@/components/Footer.astro';
 
 import imgOG from '@/assets/the-mini-ramp-foundation.png';
 
-const ogImageSrc = await getImage({ src: imgOG });
+const ogImageSrc = await getImage({
+	src: imgOG,
+	format: 'jpeg',
+});
 ---
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
@@ -22,7 +25,7 @@ const ogImageSrc = await getImage({ src: imgOG });
 <title>{config.title}</title>
 
 <meta name="title" content={config.title}>
-<meta name="description" content="The Mini Ramp Foundation is dedicated to providing more public places to skate across the United States. Empowering youth through skateboarding.">
+<meta name="description" content={config.description}>
 <meta name="keywords" content="skateboarding, miniramp, mini ramp, foundation, charity, skate park, skate, chad caruso, skate across america, half pipe, quarter pipe, skateboard, ">
 <meta name="robots" content="index, follow">
 <meta name="language" content="English">
@@ -33,6 +36,11 @@ const ogImageSrc = await getImage({ src: imgOG });
 <meta property="og:description" content={config.description}>
 <meta property="og:type" content="website">
 <meta property="og:image" content={ogImageSrc.src}>
+<meta property="twitter:image" content={ogImageSrc.src}>
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content={config.description}>
+<meta property="twitter:title" content={config.title}>
+<meta property="twitter:url" content={config.url}>
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
