@@ -1,3 +1,9 @@
+/* FOUNDER */
+    Name: Chad Caruso
+    Site: https://chadcaruso.com
+    Instagram: @chadcaruso
+    From: Long Island, New York, USA
+
 /* DEVELOPER */
     Name: John Zanussi
     Email: johnzanussi [at] gmail.com
@@ -5,8 +11,8 @@
     From: Long Island, New York, USA
 
 /* SITE */
-	Last update: 2023/12/06
+    Last update: 2023/12/06
     Language: English
-	Doctype: HTML5
+    Doctype: HTML5
     Technologies: Vercel, Astro, TypeScript, Bootstrap
     Tools: VS Code, git
