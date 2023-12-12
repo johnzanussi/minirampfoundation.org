@@ -19,4 +19,5 @@ export default {
     ],
     themeColor: '#161616',
     contactEmail: 'minirampfoundation@gmail.com',
+    ein: '93-3661752',
 };

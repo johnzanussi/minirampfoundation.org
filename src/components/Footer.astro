@@ -1,6 +1,7 @@
 ---
 import type { Link } from '@/types/links';
 import { Image } from 'astro:assets';
+import config from '@/config';
 
 type Props = {
     links: Link[];
@@ -26,7 +27,7 @@ const { links } = Astro.props;
 				/>
 
 				<p class="mt-3 mt-md-4 small">
-					Registered 501(C)(3). EIN: XX-XXXXXXX
+					Registered 501(C)(3). EIN: {config.ein}
 				</p>
 
 			</div>

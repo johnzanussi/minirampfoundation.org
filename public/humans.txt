@@ -11,8 +11,8 @@
     From: Long Island, New York, USA
 
 /* SITE */
-    Last update: 2023/12/06
+    Last update: 2023/12/11
     Language: English
     Doctype: HTML5
-    Technologies: Vercel, Astro, TypeScript, Bootstrap
+    Technologies: Astro, TypeScript, Bootstrap, Vercel
     Tools: VS Code, git

@@ -1,31 +1,32 @@
 ---
 import { Image } from 'astro:assets';
-import iconYoutube from 'bootstrap-icons/icons/youtube.svg';
 import iconInstagram from 'bootstrap-icons/icons/instagram.svg';
-import iconFacebook from 'bootstrap-icons/icons/facebook.svg';
-import iconTiktok from 'bootstrap-icons/icons/tiktok.svg';
+// import iconYoutube from 'bootstrap-icons/icons/youtube.svg';
+// import iconFacebook from 'bootstrap-icons/icons/facebook.svg';
+// import iconTiktok from 'bootstrap-icons/icons/tiktok.svg';
 
 const socialAccounts = [
     {
-        name: 'YouTube',
-        icon: iconYoutube,
-        url: 'https://www.youtube.com/chadcaruso',
-    },
-    {
         name: 'Instagram',
         icon: iconInstagram,
-        url: 'https://www.instagram.com/chad_caruso',
+        url: 'https://www.instagram.com/minirampfoundation/',
+        handle: '@minirampfoundation',
     },
-    {
-        name: 'Facebook',
-        icon: iconFacebook,
-        url: 'https://facebook.com/',
-    },
-    {
-        name: 'TikTok',
-        icon: iconTiktok,
-        url: 'https://tiktok.com/',
-    },
+    // {
+    //     name: 'YouTube',
+    //     icon: iconYoutube,
+    //     url: 'https://www.youtube.com/chadcaruso',
+    // },
+    // {
+    //     name: 'Facebook',
+    //     icon: iconFacebook,
+    //     url: 'https://facebook.com/',
+    // },
+    // {
+    //     name: 'TikTok',
+    //     icon: iconTiktok,
+    //     url: 'https://tiktok.com/',
+    // },
 ];
 ---
 <div class="mb-4 mb-md-5">
@@ -35,16 +36,17 @@ const socialAccounts = [
     </p>
 
     <ul class="list-inline">
-        {socialAccounts.map(({ icon, url, name }) => {
+        {socialAccounts.map(({ icon, url, name, handle }) => {
             return (
                 <li class="list-inline-item me-4">
-                    <a href={url} aria-label={name}>
+                    <a href={url} aria-label={`Follow ${handle} on ${name}`}>
                         <Image
                             src={icon}
                             alt={`${name} logo icon`}}
                             width="40"
                             height="40"
                         />
+                        {handle}
                     </a>
                 </li>
             );

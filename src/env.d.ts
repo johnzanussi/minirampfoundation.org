@@ -6,3 +6,8 @@ declare namespace astroHTML.JSX {
         allowpaymentrequest?: string;
     }
 }
+
+interface Window {
+    fnames?: string[];
+    $mcj?: Function;
+};

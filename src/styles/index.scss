@@ -25,3 +25,22 @@ html {
 .decoration-break {
     box-decoration-break: clone;
 }
+
+// MailChimp newsletter overrides
+#mc_embed_shell {
+
+    #mc_embed_signup {
+
+        div.mce_inline_error {
+            padding: 0;
+            font-weight: normal;
+            background-color: transparent !important;
+            @extend .invalid-feedback;
+        }
+
+        input.mce_inline_error {
+            @extend .is-invalid;
+        }
+
+    }
+}

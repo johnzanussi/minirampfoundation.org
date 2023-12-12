@@ -7,7 +7,9 @@ import compress from 'astro-compress';
 export default defineConfig({
     output: 'static',
     integrations: [
-        purgecss(),
+        purgecss({
+            safelist: ['mce_inline_error'],
+        }),
         compress(),
     ],
 });
