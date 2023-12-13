@@ -3,11 +3,11 @@ The Mini Ramp Foundation is dedicated to providing more public places to skate a
 
 [minirampfoundation.org](https://minirampfoundation.org)
 
-Registered 501(C)(3). EIN: XX-XXXXXXX
+Registered 501(C)(3). EIN: 93-3661752
 
 ## 🚀 Project Structure
 
-Built with [Astro](https://astro.build/).
+Built with [Astro](https://astro.build/). Hosted on [Vercel](https://vercel.com/).
 
 ```text
 /
