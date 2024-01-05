@@ -13,6 +13,10 @@ export default {
             label: 'Donate'
         },
         {
+            url: '#submissions',
+            label: 'Submissions'
+        },
+        {
             url: '#contact',
             label: 'Contact'
         },

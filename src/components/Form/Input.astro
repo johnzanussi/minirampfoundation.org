@@ -1,0 +1,43 @@
+---
+interface Props extends astroHTML.JSX.InputHTMLAttributes {
+    label: string;
+    class?: string;
+    invalidFeedback?: string;
+};
+
+const {
+    name,
+    label,
+    type = 'text',
+    class: className,
+    invalidFeedback,
+    id = `${name}::${label}`.toLowerCase().replace(/[\W_]+/g, ''),
+    ...props
+} = Astro.props;
+
+---
+
+<div class:list={['mb-3', className]}>
+
+    <label
+        for={id}
+        class="form-label"
+    >
+        {label}
+    </label>
+
+    <input
+        type={type}
+        name={name}
+        class="form-control"
+        id={id}
+        {...props}
+    />
+
+    {!!invalidFeedback && (
+        <div class="invalid-feedback">
+            {invalidFeedback}
+        </div>
+    )}
+
+</div>
