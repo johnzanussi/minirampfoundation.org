@@ -1,0 +1,17 @@
+---
+import config from '@/config';
+
+type Props = {
+    class?: string;
+    color?: string;
+};
+
+const {
+    class: className,
+    color = 'dark',
+} = Astro.props;
+---
+<a
+    href={`mailto:${config.contactEmail}`}
+    class:list={[`link-${color} link-underline-${color} link-offset-2`, className]}
+>{config.contactEmail}</a>

@@ -1,0 +1,41 @@
+---
+interface Props extends astroHTML.JSX.TextareaHTMLAttributes {
+    label: string;
+    class?: string;
+    invalidFeedback?: string;
+};
+
+const {
+    name,
+    label,
+    class: className,
+    invalidFeedback,
+    id = `${name}::${label}`.toLowerCase().replace(/[\W_]+/g, ''),
+    ...props
+} = Astro.props;
+
+---
+
+<div class:list={['mb-3', className]}>
+
+    <label
+        for={id}
+        class="form-label"
+    >
+        {label}
+    </label>
+
+    <textarea
+        name={name}
+        class="form-control"
+        id={id}
+        {...props}
+    />
+
+    {!!invalidFeedback && (
+        <div class="invalid-feedback">
+            {invalidFeedback}
+        </div>
+    )}
+
+</div>

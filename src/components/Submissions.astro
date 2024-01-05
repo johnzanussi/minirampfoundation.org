@@ -1,0 +1,188 @@
+---
+import Section from '@/components/Section.astro';
+import HighlightHeader from '@/components/HighlightHeader.astro';
+import Input from '@/components/Form/Input.astro';
+import Textarea from '@/components/Form/Textarea.astro';
+import Submit from '@/components/Form/Submit.astro';
+import EmailLink from './EmailLink.astro';
+---
+
+<Section id="submissions">
+
+    <div class="w-md-75 row mx-auto text-center">
+
+        <HighlightHeader class="mb-md-4">
+            Submissions
+        </HighlightHeader>
+
+        <p>Want a mini ramp in your town? Submit a request below.</p>
+
+        <div class="row">
+
+            <div class="col offset-lg-2 col-lg-8 text-start">
+
+                <form
+                    action="https://forms.zanu.io/api/submit"
+                    method="POST"
+                    class="js-form"
+                    novalidate
+                >
+
+                    <input
+                        type="hidden"
+                        name="token"
+                        value="Dajip0G1B0L3DUiwinhn3jRC28loM42w"
+                    />
+
+                    <Input
+                        name="name"
+                        label="Name"
+                        required
+                        invalidFeedback="Please enter your name"
+                    />
+
+                    <Input
+                        name="email"
+                        label="Email Address"
+                        type="email"
+                        required
+                        invalidFeedback="Please enter a valid email address."
+                    />
+
+                    <Input
+                        name="location"
+                        label="Location"
+                        required
+                        invalidFeedback="Please enter your location."
+                    />
+
+                    <Textarea
+                        name="description"
+                        label="Description of project"
+                        required
+                        invalidFeedback="Please describe your project."
+                    />
+
+                    <Textarea
+                        name="steps"
+                        label="Steps taken (if any)"
+                    />
+
+                    <Submit label="Submit" class="text-end" />
+
+                    <div class="form-message-success text-end text-success d-none">
+                        Thanks for your submission. We'll be in touch.
+                    </div>
+
+                    <div class="form-message-error text-end text-danger d-none">
+                        Something went wrong. Please try again or email us directly at <EmailLink color="danger" />.
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</Section>
+
+<script>
+let isSubmitting = false;
+const $form = document.querySelector<HTMLFormElement>('.js-form');
+
+if ($form) {
+
+    const $errorMessage = $form.querySelector('.form-message-error');
+    const $successMessage = $form.querySelector('.form-message-success');
+    const $submit = $form.querySelector('button[type="submit"]');
+
+    type FormStatus = 'reset' | 'submit' | 'success' | 'error';
+
+    const formStatus = (status: FormStatus) => {
+
+        // Submitting
+        if (status === 'reset') {
+
+            $submit?.removeAttribute('disabled');
+            $errorMessage?.classList.add('d-none');
+            $successMessage?.classList.add('d-none');
+            $form.classList.add('was-validated');
+
+        } else if (status === 'submit') {
+
+            isSubmitting = true;
+
+            $submit?.setAttribute('disabled', 'true');
+            $errorMessage?.classList.add('d-none');
+            $successMessage?.classList.add('d-none');
+
+        } else if (status === 'success') {
+
+            // Success
+            isSubmitting = false;
+
+            $form.reset();
+            $successMessage?.classList.remove('d-none');
+            $form.classList.remove('was-validated');
+            $submit?.removeAttribute('disabled');
+
+        } else if (status === 'error') {
+
+            // Error
+            isSubmitting = false;
+
+            $errorMessage?.classList.remove('d-none');
+            $submit?.removeAttribute('disabled');
+            $form.classList.remove('was-validated');
+
+        }
+
+    };
+
+    $form.addEventListener('submit', async function(this: HTMLFormElement, e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        formStatus('reset');
+
+        const actionUrl = this.getAttribute('action');
+        const formData = new FormData(this);
+
+        if (
+            !isSubmitting &&
+            actionUrl &&
+            this.checkValidity()
+        ) {
+            formStatus('submit');
+
+            try {
+
+                const response = await fetch(actionUrl, {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                    },
+                    body: formData,
+                });
+
+                const json = await response.json();
+                if (json.success) {
+
+                    formStatus('success');
+
+                } else {
+                    throw new Error();
+                }
+
+            } catch(error) {
+                formStatus('error');
+            }
+
+        }
+
+    });
+}
+</script>

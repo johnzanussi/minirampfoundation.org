@@ -3,8 +3,7 @@ import Section from '@/components/Section.astro';
 import SocialIcons from '@/components/SocialIcons.astro';
 import Newsletter from '@/components/Newsletter.astro';
 import HighlightHeader from '@/components/HighlightHeader.astro';
-
-import config from '@/config';
+import EmailLink from './EmailLink.astro';
 ---
 <Section id="contact">
 
@@ -17,7 +16,7 @@ import config from '@/config';
             </HighlightHeader>
 
             <p class="mb-4 mb-md-5">
-                All inquries can be sent to <a href={`mailto:${config.contactEmail}`} class="link-underline-dark link-offset-2">{config.contactEmail}</a>.
+                All inquries can be sent to <EmailLink />.
             </p>
 
         </div>
