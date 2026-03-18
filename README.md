@@ -1,7 +1,7 @@
 # 🛹 The Mini Ramp Foundation
 The Mini Ramp Foundation is dedicated to providing more public places to skate across the United States. By focusing on smaller projects such as mini ramps, we will be able to cover more ground and at a faster rate. As skateboarding continues to grow in popularity, we aim to help our public facilities grow in quality and quantity.
 
-[minirampfoundation.org](https://minirampfoundation.org)
+[minirampfoundation.org](https://minirampfoundation.vercel.app)
 
 Registered 501(C)(3). EIN: 93-3661752
 
